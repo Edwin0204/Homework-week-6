@@ -1,10 +1,36 @@
 .bg-primary {
     --bs-bg-opacity: 1;
     background-image: linear-gradient(to right, #1c74f8e4, rgb(2, 2, 61));
-  };
+  }
 
   .header{
       font-weight: bolder ;
-  };
+  }
 
+  .section {
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+  .left {
+    display: flex;
+    font-size: x-large;
+    color: #445876;  
+    width: 25%;
+    border-right: solid var(--bg);
+    padding-right: 2%;
+    flex-direction: column;
+}
+.right   {
+    font-size: small;
+    padding: 3%;
+    margin-bottom: 2%;
+    width: 75%;    
+}
+
+.bg-card {
+    background-color: #2D3E50;
+  }
  
