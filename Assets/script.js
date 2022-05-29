@@ -1,13 +1,28 @@
-function GetInfo() {
+let i=0
+function Click() {
 
     var newName = document.getElementById("city");
     var cityName = document.getElementById("cityName");
     cityName.innerHTML =newName.value;
     let key = "777b995858df96d8a63d276827cb2cf5";
-
+    let historyEl = document.getElementById("history");
+    let searchHistory = JSON.parse(localStorage.getItem("history")) || [];
+  
     
 
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newName.value}&units=metric&appid=${key}`)
+    searchHistory.push(newName.value);
+    localStorage.setItem("history", JSON.stringify(searchHistory));
+    console.log(searchHistory[1]);
+     
+    for (i=i; i < searchHistory.length; i++) {
+        let newPlace = document.createElement("button");
+        newPlace.setAttribute("class", "form-control d-block text-center");
+        newPlace.innerHTML = searchHistory[i];
+        historyEl.appendChild(newPlace);
+    }
+    
+
+   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newName.value}&units=metric&appid=${key}`)
     .then(res => res.json()).then(data => {
         console.log(data);
 
@@ -48,11 +63,15 @@ function GetInfo() {
 
     });
     
-     
+console.log(localStorage);
   
 
 }
     
     
-   
+   function Clear(){
+    localStorage.clear();
+    searchHistory = [];
+    window.location.reload();
+   };
 
