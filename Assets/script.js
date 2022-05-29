@@ -4,7 +4,8 @@ function GetInfo() {
     var cityName = document.getElementById("cityName");
     cityName.innerHTML =newName.value;
     let key = "777b995858df96d8a63d276827cb2cf5";
-    var today = new Date();
+
+    
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newName.value}&units=metric&appid=${key}`)
     .then(res => res.json()).then(data => {
@@ -47,12 +48,10 @@ function GetInfo() {
 
     });
     
-
-   
+     
+  
 
 }
-    
-
     
     
    
