@@ -31,3 +31,5 @@
    ## Mock-Up
 
    ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for Paris.](./Assets/Capture.PNG)
+
+   https://edwin0204.github.io/Homework-week-6/
